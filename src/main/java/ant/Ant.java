@@ -5,6 +5,8 @@ import ant.properties.Colour;
 import ant.properties.Coordinates;
 import ant.properties.Direction;
 
+import java.util.Objects;
+
 public class Ant {
     private Colour currentColour;
     private Direction currentDirection;
@@ -44,5 +46,31 @@ public class Ant {
 
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    @Override
+    public String toString() {
+        return "Ant{" +
+                "currentColour=" + currentColour +
+                ", currentDirection=" + currentDirection +
+                ", capacityStatus=" + capacityStatus +
+                ", coordinates=" + coordinates +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ant)) return false;
+        Ant ant = (Ant) o;
+        return getCurrentColour() == ant.getCurrentColour() &&
+                getCurrentDirection() == ant.getCurrentDirection() &&
+                getCapacityStatus() == ant.getCapacityStatus() &&
+                Objects.equals(getCoordinates(), ant.getCoordinates());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCurrentColour(), getCurrentDirection(), getCapacityStatus(), getCoordinates());
     }
 }
