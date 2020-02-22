@@ -4,17 +4,35 @@ import ant.properties.Colour;
 import ant.properties.Coordinates;
 import ant.properties.Direction;
 
+import java.util.Random;
+
 public class InitialStateRandomizer {
 
-    public Colour randomColour(){
-        throw new UnsupportedOperationException();
+    private Random random;
+
+    public InitialStateRandomizer() {
+        this.random = new Random();
     }
 
-    public Direction randomDirection(){
-        throw new UnsupportedOperationException();
+    public Colour randomColour() {
+        return Colour.values()[random.nextInt(Colour.values().length)];
+    }
+
+    public Direction randomDirection() {
+        return Direction.values()[random.nextInt(Direction.values().length)];
     }
 
     public Coordinates randomCoordinates() {
-        throw new UnsupportedOperationException();
+
+        int x = 1;
+        int y = 1;
+
+        if (random.nextInt(11) > 5) {
+            x = -1;
+        }
+        if (random.nextInt(11) > 5) {
+            y = -1;
+        }
+        return new Coordinates(random.nextInt(Integer.MAX_VALUE) * x, random.nextInt(Integer.MAX_VALUE) * y);
     }
 }
