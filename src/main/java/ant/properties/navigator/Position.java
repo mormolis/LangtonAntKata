@@ -5,11 +5,11 @@ import ant.properties.Direction;
 
 import java.util.Objects;
 
-public class Possition {
+public class Position {
     private Coordinates coordinates;
     private Direction direction;
 
-    public Possition(Coordinates coordinates, Direction direction) {
+    public Position(Coordinates coordinates, Direction direction) {
         this.coordinates = coordinates;
         this.direction = direction;
     }
@@ -32,7 +32,7 @@ public class Possition {
 
     @Override
     public String toString() {
-        return "Possition{" +
+        return "Position{" +
                 "coordinates=" + coordinates +
                 ", direction=" + direction +
                 '}';
@@ -41,10 +41,10 @@ public class Possition {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Possition)) return false;
-        Possition possition = (Possition) o;
-        return Objects.equals(getCoordinates(), possition.getCoordinates()) &&
-                getDirection() == possition.getDirection();
+        if (!(o instanceof Position)) return false;
+        Position position = (Position) o;
+        return Objects.equals(getCoordinates(), position.getCoordinates()) &&
+                getDirection() == position.getDirection();
     }
 
     @Override

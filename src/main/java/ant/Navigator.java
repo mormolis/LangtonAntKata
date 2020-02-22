@@ -3,17 +3,17 @@ package ant;
 import ant.properties.Colour;
 import ant.properties.Coordinates;
 import ant.properties.Direction;
-import ant.properties.navigator.Possition;
+import ant.properties.navigator.Position;
 
 public class Navigator {
 
 
-    public Possition navigateFrom(Direction direction, Colour colour, Coordinates coordinates) {
+    public Position navigateFrom(Direction direction, Colour colour, Coordinates coordinates) {
 
         Direction newDirection = getDirection(direction, colour);
         Coordinates newCoordinates = getNewCoordinates(coordinates, newDirection);
 
-        return new Possition(newCoordinates, newDirection);
+        return new Position(newCoordinates, newDirection);
     }
 
     private Coordinates getNewCoordinates(Coordinates coordinates, Direction newDirection) {
