@@ -27,10 +27,10 @@ public class InitialStateRandomizer {
         int x = 1;
         int y = 1;
 
-        if (random.nextInt(11) > 5) {
+        if (random.nextInt(10) > 5) {
             x = -1;
         }
-        if (random.nextInt(11) > 5) {
+        if (random.nextInt(10) > 5) {
             y = -1;
         }
         return new Coordinates(random.nextInt(Integer.MAX_VALUE) * x, random.nextInt(Integer.MAX_VALUE) * y);

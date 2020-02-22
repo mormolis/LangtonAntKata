@@ -44,10 +44,12 @@ public class Navigator {
         Direction newDirection = null;
 
         if (colour.equals(Colour.BLACK)) {
+            // when the ant is black rotate the value anticlockwise and wrap on negative values
             newDirection = Direction.values()[(direction.ordinal() - 1 + 4) % 4];
         }
 
         if (colour.equals(Colour.WHITE)) {
+            // when the ant is white rotate the value clockwise and wrap on values greater than the number of available Directions
             newDirection = Direction.values()[(direction.ordinal() + 1) % 4];
         }
         return newDirection;
