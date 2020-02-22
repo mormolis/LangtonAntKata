@@ -1,4 +1,4 @@
-# Langton ant.Ant
+# Langton Ant kata
 ## About this Kata
 The purpose is to build a cellular automaton : Langton ant.Ant
 
